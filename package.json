@@ -4,7 +4,7 @@
   "description": "js bundler",
   "main": "index.js",
   "scripts": {
-    "test": "nyc --reporter=html ava && nyc report --reporter=text-lcov | coveralls"
+    "test": "nyc ava"
   },
   "repository": {
     "type": "git",
@@ -22,7 +22,7 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-flow": "^6.23.0",
     "babel-register": "^6.26.0",
-    "coveralls": "^3.0.0",
+    "codecov": "^3.0.0",
     "flow-bin": "^0.69.0",
     "nyc": "^11.4.1",
     "sinon": "^5.0.0"
@@ -57,5 +57,12 @@
         "@ava/transform-test-files"
       ]
     }
+  },
+  "nyc": {
+    "reporter": [
+      "html",
+      "lcov",
+      "text"
+    ]
   }
 }
