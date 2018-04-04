@@ -4,8 +4,7 @@
   "description": "js bundler",
   "main": "index.js",
   "scripts": {
-    "test": "nyc ava",
-    "coverage": "nyc report --reporter=lcov > coverage.lcov && codecov"
+    "test": "nyc ava"
   },
   "repository": {
     "type": "git",
