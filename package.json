@@ -22,9 +22,9 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-flow": "^6.23.0",
     "babel-register": "^6.26.0",
-    "flow-bin": "^0.67.1",
+    "flow-bin": "^0.69.0",
     "nyc": "^11.4.1",
-    "sinon": "^4.0.2"
+    "sinon": "^5.0.0"
   },
   "dependencies": {
     "@most/create": "^2.0.1",
