@@ -24,7 +24,7 @@
     "babel-register": "^6.26.0",
     "flow-bin": "^0.68.0",
     "nyc": "^11.4.1",
-    "sinon": "^4.0.2"
+    "sinon": "^5.0.0"
   },
   "dependencies": {
     "@most/create": "^2.0.1",
