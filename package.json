@@ -25,6 +25,7 @@
     "codecov": "^3.0.0",
     "flow-bin": "^0.69.0",
     "nyc": "^11.4.1",
+    "proxyquire": "^2.0.1",
     "sinon": "^5.0.0"
   },
   "dependencies": {

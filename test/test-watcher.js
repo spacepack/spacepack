@@ -1,8 +1,10 @@
 // @flow
 
 import test from 'ava';
-import proxy from './helpers/proxy';
+import proxyquire from 'proxyquire';
 import sinon from 'sinon';
+
+proxyquire.noCallThru();
 
 const close = sinon.spy();
 const add = sinon.spy();
@@ -15,7 +17,7 @@ const cb = sinon.spy();
 const cb2 = sinon.spy();
 const finished = sinon.spy((f: () => void) => f());
 
-const createEventTarget = proxy(() => require('../bundle/watcher'), {
+const createEventTarget = proxyquire('../bundle/watcher', {
     'chokidar': {
         watch: () => ({
             close,
