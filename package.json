@@ -57,8 +57,7 @@
         "@ava/stage-4",
         "@ava/transform-test-files"
       ]
-    },
-    "concurrency": 1
+    }
   },
   "nyc": {
     "reporter": [

@@ -1,9 +1,11 @@
 // @flow
 
 import test from 'ava';
-import proxy from './helpers/proxy';
+import proxyquire from 'proxyquire';
 import * as most from 'most';
 import sinon from 'sinon';
+
+proxyquire.noCallThru();
 
 test.cb('existing file', t => {
     const addEventListener = sinon.spy();
@@ -17,7 +19,7 @@ test.cb('existing file', t => {
         removeEventListener
     }));
 
-    const streamFileInfo = proxy(() => require('../bundle/stream-file-info'), {
+    const streamFileInfo = proxyquire('../bundle/stream-file-info', {
         './watcher': (...args) => watcherMock(...args),
         'fs': {
             stat
@@ -50,7 +52,7 @@ test.cb('existing file', t => {
 });
 
 test.cb('existing file from cache', t => {
-    const streamFileInfo = proxy(() => require('../bundle/stream-file-info'), {
+    const streamFileInfo = proxyquire('../bundle/stream-file-info', {
         './cache': {
             getFileMtime: () => 1001
         }
@@ -73,7 +75,7 @@ test.cb('existing file from cache', t => {
 });
 
 test.cb('non existing file', t => {
-    const streamFileInfo = proxy(() => require('../bundle/stream-file-info'), {
+    const streamFileInfo = proxyquire('../bundle/stream-file-info', {
     });
 
     let stopResolve;
@@ -110,7 +112,7 @@ test.cb('existing file removed', t => {
         removeEventListener
     }));
 
-    const streamFileInfo = proxy(() => require('../bundle/stream-file-info'), {
+    const streamFileInfo = proxyquire('../bundle/stream-file-info', {
         './watcher': (...args) => watcherMock(...args),
         'fs': {
             stat
@@ -169,7 +171,7 @@ test.cb('non existing file added', t => {
         removeEventListener
     }));
 
-    const streamFileInfo = proxy(() => require('../bundle/stream-file-info'), {
+    const streamFileInfo = proxyquire('../bundle/stream-file-info', {
         './watcher': (...args) => watcherMock(...args),
         'fs': {
             stat
@@ -203,7 +205,7 @@ test.cb('non existing file added', t => {
 });
 
 test.cb('exception', t => {
-    const streamFileInfo = proxy(() => require('../bundle/stream-file-info'), {
+    const streamFileInfo = proxyquire('../bundle/stream-file-info', {
         'fs': {
             stat : () =>
             {
