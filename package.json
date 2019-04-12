@@ -24,7 +24,7 @@
     "babel-preset-flow": "^6.23.0",
     "babel-register": "^6.26.0",
     "codecov": "^3.0.4",
-    "flow-bin": "^0.69.0",
+    "flow-bin": "^0.97.0",
     "nyc": "^11.9.0",
     "proxyquire": "^2.0.1",
     "sinon": "^5.1.1"
