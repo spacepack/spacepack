@@ -27,7 +27,7 @@
     "flow-bin": "^0.69.0",
     "nyc": "^11.9.0",
     "proxyquire": "^2.0.1",
-    "sinon": "^5.1.1"
+    "sinon": "^8.0.0"
   },
   "dependencies": {
     "@most/create": "^2.0.1",
