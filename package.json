@@ -32,7 +32,7 @@
   "dependencies": {
     "@most/create": "^2.0.1",
     "chokidar": "^2.0.4",
-    "most": "^1.7.3"
+    "most": "^1.8.1"
   },
   "babel": {
     "presets": [
